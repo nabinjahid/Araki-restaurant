@@ -1,0 +1,9 @@
+.fetured {
+    position: relative;
+    background-image: url('../../../assets/home/featured.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
