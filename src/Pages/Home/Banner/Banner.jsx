@@ -12,6 +12,7 @@ const Banner = () => {
     <Carousel>
       <div>
         <img src={imag1} alt="Slide 1" />
+        
       </div>
       <div>
         <img src={imag2} alt="Slide 2" />
