@@ -3,6 +3,7 @@ import Heading from "../SectionTitle/Heading";
 import MenuItem from "../../Pages/Home/MenuItem/MenuItem";
 import useMenu from "../../Hooks/useMenu";
 import Button from "../Button/Button";
+import MenuCategory from "../../Pages/Menu/MenuCategory";
 
 const PopularMenu = () => {
   const [menu, loading] = useMenu();
@@ -21,14 +22,8 @@ const PopularMenu = () => {
   }
   return (
     <div className="my-10">
-      <div className="grid md:grid-cols-2 gap-4 space-y-5">
-        {popularMenu.map((item) => (
-          <MenuItem key={item._id} item={item}></MenuItem>
-        ))}
-      </div>
-      <div className="mt-8 text-center">
-        <Button></Button>
-      </div>
+      <MenuCategory item={popularMenu}></MenuCategory>
+      
     </div>
   );
 };
