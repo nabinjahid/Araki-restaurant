@@ -30,10 +30,8 @@ const Menu = () => {
       </div>
       <div>
         {/* <PopularMenu></PopularMenu> */}
-        <MenuCategory item={offered}></MenuCategory>
-        <div className="text-center my-8">
-          <Button btn={"order your favorite food"}></Button>
-        </div>
+        <MenuCategory item={offered} category={"popular"}></MenuCategory>
+        
       </div>
 
       {/* dessert */}
@@ -42,12 +40,10 @@ const Menu = () => {
           img={dessertBg}
           headding="DESSERTS"
           subHeadding="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-          height={"700px"}
+          height={"500px"}
         ></Cover>
-        <MenuCategory item={dessert}></MenuCategory>
-        <div className="text-center my-8">
-          <Button btn={"order your favorite food"}></Button>
-        </div>
+        <MenuCategory item={dessert} category={"dessert"} ></MenuCategory>
+        
       </div>
       {/* pizza */}
       <div className="space-y-8 mt-10">
@@ -55,12 +51,10 @@ const Menu = () => {
           img={pizzaBg}
           headding="Pizza"
           subHeadding="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-          height={"700px"}
+          height={"500px"}
         ></Cover>
-        <MenuCategory item={pizza}></MenuCategory>
-        <div className="text-center my-8">
-          <Button btn={"order your favorite food"}></Button>
-        </div>
+        <MenuCategory item={pizza} category={"pizza"}></MenuCategory>
+        
       </div>
       {/* salads */}
       <div className="space-y-8 mt-10">
@@ -68,12 +62,10 @@ const Menu = () => {
           img={saladBg}
           headding="Salads"
           subHeadding="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-          height={"700px"}
+          height={"500px"}
         ></Cover>
-        <MenuCategory item={salad}></MenuCategory>
-        <div className="text-center my-8">
-          <Button btn={"order your favorite food"}></Button>
-        </div>
+        <MenuCategory item={salad} category={"salad"}></MenuCategory>
+        
       </div>
       {/* soup */}
       <div className="space-y-8 my-10 ">
@@ -81,12 +73,10 @@ const Menu = () => {
           img={soupBg}
           headding="Soups"
           subHeadding="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-          height={"700px"}
+          height={"500px"}
         ></Cover>
-        <MenuCategory item={soup}></MenuCategory>
-        <div className="text-center my-8">
-          <Button btn={"order your favorite food"}></Button>
-        </div>
+        <MenuCategory item={soup} category={"soup"}></MenuCategory>
+        
       </div>
     </div>
   );

@@ -1,17 +1,55 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
+import { FaCartShopping } from "react-icons/fa6";
+import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
+  const { LogOutUser } = useAuth();
+  const { cart } = useCart();
+  console.log(cart);
+
+  const handleLogOut = () => {
+    LogOutUser()
+      .then(() => {
+        toast("Log Out Success!");
+      })
+      .catch((error) => {});
+  };
+
   const navOptions = (
-    <>
+    <div className="flex justify-center items-center">
       <li>
-        <Link to={'/'}>Home</Link>
+        <Link to={"/"}>Home</Link>
       </li>
       <li>
-        <Link to={'/menu'}>Menue</Link>
+        <Link to={"/menu"}>Menu</Link>
       </li>
-    </>
+      <li>
+        <Link to={"/order/salad"}>Order</Link>
+      </li>
+      <li>
+        <Link to={"/login"}>Login</Link>
+      </li>
+      <li>
+        <Link to={"/register"}>Register</Link>
+      </li>
+      <li>
+        <button onClick={handleLogOut}>LogOut</button>
+      </li>
+      <li>
+        <Link to={"/dashbord/card"} className="relative">
+          <FaCartShopping className="text-3xl text-white" />
+          <span className="absolute  rounded-full p-1 bg-blue-400 top-0 right-0">
+            +{cart.length}
+          </span>
+        </Link>
+      </li>
+    </div>
   );
+
   return (
     <div className="navbar fixed max-w-7xl mx-auto z-20 text-white bg-opacity-30 bg-black">
       <div className="navbar-start">
@@ -38,11 +76,13 @@ const Navbar = () => {
           >
             {navOptions}
           </ul>
+          {/* <button onClick={handleLogOut}>LogOut</button> */}
         </div>
-        <a className="btn btn-ghost text-xl">Araki Resturant</a>
+        <a className="btn btn-ghost text-xl uppercase">Araki Resturant</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
+        {/* <button onClick={handleLogOut}>LogOut</button> */}
       </div>
       <div className="navbar-end">
         <a className="btn">Button</a>
